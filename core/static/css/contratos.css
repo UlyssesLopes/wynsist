@@ -1,0 +1,135 @@
+/* google fonts */
+@import url("https://fonts.googleapis.com/css?family=Arimo|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300");
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.452), rgba(0, 0, 0, 0.342)), 100% url(../IMG/fundoHome.png) ;
+    background-size: cover;
+    background-position: center top;
+    
+}
+
+:root {
+    --cinzaescuro: #2e3842;
+    --vermelho: #ed1c24;
+    --cinzaclaro: #d1d3d4;
+    --cinzamedio: #43525a;
+    --branco: #f7f7f7;
+    --teste: #586b7e;
+}
+
+
+
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloProject {
+    padding: 10px;
+    font-size: 28px;
+    color: var(--cinzaclaro);
+    margin-left: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.tituloProject:hover {
+    transform: scale(1.2);
+    color: #f7f7f7;
+}
+
+.ajustarNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logoWyn {
+    display: block;
+    width: 55%;
+    margin: auto;
+    padding: 10px;
+}
+
+
+header {
+    color: var(--cinzaescuro);
+    margin-top: 64px;
+    text-align: center;
+    background-color: var(--branco);
+}
+
+/*NAVBAR NAVBAR*/
+nav.navigation {
+    position: relative;   
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: var(--cinzaescuro);
+}
+
+nav.navigation ul {
+    text-align: start;
+}
+
+nav.navigation ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+nav.navigation ul li a {
+    display: block;
+    text-decoration: none;
+    color: var(--cinzaclaro);
+    padding: 20px;
+    transition: background .2s linear;
+}
+
+nav.navigation ul li a:hover {
+    background-color: var(--branco);
+    color: var(--vermelho);
+
+}
+
+/*COLLAPSE NAV*/
+.responsive-nav {
+    display: none;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    left: 0;
+    top: 0;
+    background: white;
+}
+
+.responsive-nav span {
+    float: left;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.responsive-nav i {
+    float: right;
+    padding: 15px;
+}
+
+.alinhar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

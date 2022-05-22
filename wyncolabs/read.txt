@@ -1,0 +1,6 @@
+
+DJANGO ADMIN
+
+user: admin
+senha: superadm
+

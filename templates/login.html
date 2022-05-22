@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WynColab</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+</head>
+<body>
+    <section>
+        <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Entrar</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab" style="display: none;">Cadastrar</label>
+                <div class="login-form">
+                    <form action="submit" method="POST"> {% csrf_token %}
+                        <div class="sign-in-htm">
+                            <div class="group">
+                                <label for="usuario" class="label">Login</label>
+                                <input id="user" type="text" name="username" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="password" class="label">Senha</label>
+                                <input type="password" name="password" class="password input" size="25">
+                            </div>
+                            <div class="group">
+                                <input type="checkbox" id="showHide" class="checado"/>
+                                <label for="showHide" class="icon" id="showHideLabel">Mostrar senha</label>
+                            </div>
+                            <div class="group">
+                                <button type="submit" class="button bolden" value="Entrar">ENTRAR</button>
+                            </div>
+                            <div>
+                                {% for message in messages %}
+                                    <div align="center" class="errorMessage">
+                                         {{ message }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="hr"></div>
+                            <div class="foot-lnk" align="center">
+                                <div class="login-wrap-5"></div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="abajo">
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+            </defs>
+            <g class="wave1">
+                <use xlink:href="#wave-path" x="50" y="3" fill="#e63947d2">
+            </g>
+            <g class="wave2">
+                <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+            </g>
+            <g class="wave3">
+                <use xlink:href="#wave-path" x="50" y="9" fill="#43525a">
+            </g>
+        </svg>
+    </section>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#showHide").click(function() {
+            if ($(".password").attr("type") == "password") {
+                $(".password").attr("type", "text");
+
+            } else {
+                $(".password").attr("type", "password");
+            }
+        });
+    });
+
+</script>
+
+</html>

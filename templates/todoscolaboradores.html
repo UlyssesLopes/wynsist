@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          media="screen" title="no title">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    <title>WynColab</title>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+
+</head>
+
+<body class="login-wraps">
+
+
+<nav class="navigation" id="navbar">
+    <ul class="ajustarNav">
+        <div class="centralizar">
+            <h3 class="tituloProject">WynColab</h3>
+        </div>
+        <div>
+            <li><a href="/" id="to-inicio">Inicio</a></li>
+        </div>
+        <div>
+            <img src="/static/img/logo1.png" class="logoWyn">
+        </div>
+    </ul>
+</nav>
+
+<div align="center" class="" >
+
+    <div class="col-11" >
+        <div class="col-11">
+
+            <div class="col-11 " align="right">
+                <div class="col-2">
+                    <a href="novocolaborador/" class="bordabtn" type="button"
+                       style="text-decoration:none; color: var(--branco)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                             class="bi bi-person-plus" viewBox="0 0 16 16">
+                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                            <path fill-rule="evenodd"
+                                  d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                        Novo Colaborador</a>
+                </div>
+
+            </div>
+            <div>
+                <div class="col-12 cardwrap">
+                    {% for colaborador in colaboradores %}
+                    <div class="card-container m-1 mt-4">
+                        <img class="round" src="/static/img/user.png" alt="user" style="width: 40%;"/>
+                        <h3 class="hh3 uppercase">{{ colaborador.nome }}</h3>
+                        <h6 class="hh6 uppercase">{{ colaborador.cidade }}</h6>
+                        <p class="piston uppercase">{{ colaborador.cargo }}</p>
+
+                        <br>
+                        <div class="buttons">
+                            <a href="novocolaborador/delete/{{ colaborador.id }}/">
+                                <button class="button primary">
+                                    Deletar
+                                </button>
+                            </a>
+                            <a href="novocolaborador/?id={{ colaborador.id }}">
+                                <button class="button primary ghost">
+                                    Alterar
+                                </button>
+                            </a>
+                            <a href="dados/{{ colaborador.id }}">
+                                <button class="button primary ">
+                                    Infos
+                                </button>
+                            </a>
+                        </div>
+                        <div class="skills" style="display: flex; flex-direction: row; align-items: center;">
+                            <h6 class="hh6 m-1">Locação:</h6>
+                            <ul>
+                                <li class="uppercase m-1">{{ colaborador.unidade }}</li>
+
+                            </ul>
+                            <h6 class="hh6 m-1">Contato:</h6>
+                            <ul>
+                                <li class="uppercase m-1">{{ colaborador.contato }}</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="col-12" style="height: 100px; visibility: hidden;">
+
+</div>
+
+<footer class="fixarRodape">
+    <section>
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+            </defs>
+            <g class="wave1">
+                <use xlink:href="#wave-path" x="50" y="3" fill="#e63947d2">
+            </g>
+            <g class="wave2">
+                <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+            </g>
+            <g class="wave3">
+                <use xlink:href="#wave-path" x="50" y="9" fill="#43525a">
+            </g>
+        </svg>
+    </section>
+
+</footer>
+
+</body>
+
+</html>
+
